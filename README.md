@@ -143,7 +143,7 @@ Install Kubernetes
 -
 sudo snap install microk8s --classic
 
-1.cassandra-image need to be build and push to registry
+1.Build the cassandra-image and push to registry
 -
 sudo microk8s enable registry #To install registry
 
@@ -151,7 +151,7 @@ sudo docker build . -t localhost:32000/cassandra-test:registry #To build and tag
 
 sudo docker push localhost:32000/cassandra-test # To push it to the registry
 
-2.The new configuration should be loaded with a Docker daemon restart and restart cassandra-image again
+2.Load the new configuration with a Docker daemon restart and restart cassandra-image again
 -
 sudo systemctl restart docker 
 
@@ -159,18 +159,18 @@ sudo docker start cassandra-test
 
 3.Configure the deployment.yaml file
 -
-4.Deploy docker container image present in the registry
+4.Deploy the Docker container image present in the registry
 -
 sudo microk8s.kubectl apply -f ./deployment.yaml # To deploy
 
 sudo microk8s kubectl expose deployment app-deployment --type=LoadBalancer --port=443 --target-port=443
 Notes:
 
-To see the pods and services created
+To see the pods and services created:
 -
 sudo microk8s.kubectl get all
 
-To delete
+To delete:
 -
 sudo microk8s.kubectl delete deployment app-deployment
 sudo microk8s.kubectl delete services app-deployment
