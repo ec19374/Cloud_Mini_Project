@@ -42,6 +42,7 @@ curl -k -i https://ec2-18-234-180-253.compute-1.amazonaws.com/recipes
 
 Response
 -
+
 HTTP/1.0 200 OK
 Content-Type: text/html; charset=utf-8
 Content-Length: 184
@@ -50,6 +51,7 @@ Date: Sun, 19 Apr 2020 01:01:51 GMT
 {
 'chicken pot pie', 'Chicken pot pie', 'past', 'curry'
 }
+
 POST method
 -
 To add one entry of new recipe information.
@@ -65,10 +67,10 @@ Content-Type: application/json
 Content-Length: 45
 Server: Werkzeug/1.0.1 Python/3.7.7
 Date: Sun, 19 Apr 2020 00:30:24 GMT
-
 {
   "message": "created: /recipes/Burger"
 }
+
 PUT method
 -
 To update a certain recipe's information.
